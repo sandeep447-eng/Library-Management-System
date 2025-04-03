@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <div class="form-container">
+            <form action="process-return-book.php" method="post">
+                <table>
+                    <!-- Book Name Dropdown -->
+                    <tr>
+                        <td><label for="bookName">Enter Book Name</label></td>
+                        <td>
+                            <select name="bookName" id="bookName" required>
+                                <option value="">Select a Book</option>
+                                <option value="Book A">Book A</option>
+                                <option value="Book B">Book B</option>
+                                <option value="Book C">Book C</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- Author Text Area -->
+                    <tr>
+                        <td><label for="author">Enter Author</label></td>
+                        <td><textarea name="author" id="author" rows="4" required></textarea></td>
+                    </tr>
+                    <!-- Serial No Dropdown -->
+                    <tr>
+                        <td><label for="serialNo">Serial No</label></td>
+                        <td>
+                            <select name="serialNo" id="serialNo" required>
+                                <option value="">Select Serial No</option>
+                                <option value="1234">1234</option>
+                                <option value="5678">5678</option>
+                                <option value="91011">91011</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- Issue Date Text Box -->
+                    <tr>
+                        <td><label for="issueDate">Issue Date</label></td>
+                        <td><input type="text" name="issueDate" id="issueDate" placeholder="DD/MM/YYYY" required></td>
+                    </tr>
+                    <!-- Return Date Calendar -->
+                    <tr>
+                        <td><label for="returnDate">Return Date</label></td>
+                        <td><input type="date" name="returnDate" id="returnDate" required></td>
+                    </tr>
+                    <!-- Remarks Text Area (Non-Mandatory) -->
+                    <tr>
+                        <td><label for="remarks">Remarks (Optional)</label></td>
+                        <td><textarea name="remarks" id="remarks" rows="4"></textarea></td>
+                    </tr>
+                    <!-- Submit Button -->
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Return Book">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

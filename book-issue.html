@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Issue - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <div class="form-container">
+            <form action="process-book-issue.php" method="post">
+                <table>
+                    <tr>
+                        <td><label for="bookName">Enter Book Name</label></td>
+                        <td>
+                            <select name="bookName" id="bookName" required>
+                                <option value="">Select a Book</option>
+                                <option value="Book A">Book A</option>
+                                <option value="Book B">Book B</option>
+                                <option value="Book C">Book C</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="author">Enter Author</label></td>
+                        <td><input type="text" name="author" id="author" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="issueDate">Issue Date</label></td>
+                        <td><input type="date" name="issueDate" id="issueDate" required min="<?php echo date('Y-m-d'); ?>"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="returnDate">Return Date</label></td>
+                        <td><input type="date" name="returnDate" id="returnDate" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="remarks">Remarks (Optional)</label></td>
+                        <td><textarea name="remarks" id="remarks" rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Issue Book">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

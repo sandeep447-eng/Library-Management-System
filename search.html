@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management - Book Availability</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+        <div class="search-box">
+            <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by book name, author, or serial number..." onkeyup="searchBooks()">
+            <button onclick="searchBooks()">Search</button>
+        </div>
+        
+        <!-- Table for displaying search results -->
+        <table id="bookTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Serial Number</th>
+                    <th>Available</th>
+                    <th>Select to Issue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic book data rows will appear here after the search -->
+            </tbody>
+        </table>
+
+        <!-- No results message -->
+        <div id="noResultsMessage" style="display:none;">
+            <p>No books found matching your search criteria.</p>
+        </div>
+        </div>
+
+        <!-- Log out button -->
+        <div class="footer">
+            <a href="logout.php" class="btn">Log Out</a>
+        </div>
+    </div>
+
+    <script>
+        // Example data that would come from the database
+        const booksData = [
+            { bookName: 'A', authorName: 'Author Name', serialNumber: '1234', available: 'Yes' },
+            { bookName: 'B', authorName: 'Another Author', serialNumber: '5678', available: 'Yes' },
+            { bookName: 'C', authorName: 'Author Name', serialNumber: '91011', available: 'No' },
+            { bookName: 'D', authorName: 'Some Author', serialNumber: '1213', available: 'No' },
+        ];
+
+        // Function to search books and display results
+        function searchBooks() {
+            let searchInput = document.getElementById('searchInput').value.toLowerCase();
+            let filteredBooks = booksData.filter(book => {
+                return (
+                    book.bookName.toLowerCase().includes(searchInput) ||
+                    book.authorName.toLowerCase().includes(searchInput) ||
+                    book.serialNumber.toLowerCase().includes(searchInput)
+                );
+            });
+
+            // Get table and no results message
+            let bookTable = document.getElementById('bookTable');
+            let noResultsMessage = document.getElementById('noResultsMessage');
+            let tableBody = bookTable.getElementsByTagName('tbody')[0];
+
+            // Clear existing table rows
+            tableBody.innerHTML = '';
+
+            if (filteredBooks.length > 0) {
+                // Show the table and hide no results message
+                bookTable.style.display = 'table';
+                noResultsMessage.style.display = 'none';
+
+                // Add rows for the filtered books
+                filteredBooks.forEach(book => {
+                    let row = tableBody.insertRow();
+                    row.innerHTML = `
+                        <td>${book.bookName}</td>
+                        <td>${book.authorName}</td>
+                        <td>${book.serialNumber}</td>
+                        <td>${book.available}</td>
+                        <td>
+                            <input type="radio" name="bookSelection" ${book.available === 'No' ? 'disabled' : ''}>
+                        </td>
+                    `;
+                });
+            } else {
+                // Show no results message and hide table
+                bookTable.style.display = 'none';
+                noResultsMessage.style.display = 'block';
+            }
+        }
+
+        // Run searchBooks on initial load to show all books
+        searchBooks();
+    </script>
+</body>
+</html>

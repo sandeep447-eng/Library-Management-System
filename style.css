@@ -1,0 +1,186 @@
+.container{
+    height: 85%;
+    width: 70vw;
+    margin: auto;
+    border: 2px solid black;
+}
+.container h1{
+    text-align: center;
+    border: 2px solid red;
+}
+.small-box{
+    height: 40%;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid green;
+}
+#admin-login, #user-login{
+    color:white;
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+    width: 25vw;
+    border: 2px solid blue;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.admin-login-box{
+    border: 2px solid red;
+    height: 50%;
+    width: 45vw;
+    margin: auto;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+}
+.admin-login-box table{
+    margin: auto;
+    border-spacing: 10px;
+}
+#btn{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.admin-nav{
+    border: 2px solid green;
+    font-size: 25px;
+    font-weight: 600;
+}
+.admin-nav ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+.admin-nav ul a{
+    text-decoration: none;
+}
+
+.small-box-txn{
+    border: 2px solid green;
+    height: 60%;
+}
+.small-box-txn a{
+    text-decoration: none;
+}
+.small-box-txn table{
+    margin: auto;
+    font-size: 20px;
+    border-spacing: 15px;
+}
+#subject{
+    font-size: 20px;
+}
+
+
+/*search.html css*/
+.search-box{
+    height: 70%;
+    width: 95%;
+    margin: auto;
+    border: 2px solid greenyellow;
+}
+.search-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+
+.footer {
+    margin-top: 20px;
+    text-align: right;
+}
+.btn {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #45a049;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.search-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+/*search.html end */
+
+/*book issue.html css*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+h1 {
+    text-align: center;
+}
+.form-container {
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rebeccapurple;
+}
+table {
+    width: 80%;
+    margin: auto;
+}
+td {
+    padding: 10px;
+}
+input[type="text"], input[type="date"], textarea, select {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+input[type="button"], input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="button"]:hover, input[type="submit"]:hover {
+    background-color: #45a049;
+}
